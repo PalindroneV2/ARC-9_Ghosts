@@ -1,0 +1,21 @@
+{
+    "title" : "ARC9 Ghosts",
+    "type" : "weapon",
+    "tags" : ["realism","roleplay"],
+	"ignore":
+	[
+		"*.cmd",
+		"*.ini",
+		"*.lnk",
+		"*.url",
+		"*.psd",
+		"*.clip",
+        "*.bat",
+        ".git/*",
+        ".gitignore",
+        ".gitattributes",
+        "*.code-workspace",
+        "LICENSE",
+        "readme.md"
+	]
+}
