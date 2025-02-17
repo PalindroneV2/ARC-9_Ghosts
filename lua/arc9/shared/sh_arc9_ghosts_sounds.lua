@@ -1,5 +1,5 @@
 
--- COD 4 M4/M16
+-- Badger
 
 sound.Add( {
     name = "ARC9_Ghosts.Badger_Fire",
@@ -73,5 +73,55 @@ sound.Add( {
     level = 100,
     sound = {
         "^weapons/ARC9/gst_honeybadger/first_stock.wav",
+    }
+} )
+
+-- FN40GL
+
+sound.Add( {
+    name = "ARC9_Ghosts.Kastet_Fire",
+    channel = CHAN_STATIC,
+    volume = 0.75,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_kastet/stereo.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ARC9_Ghosts.Kastet_Mech",
+    channel = CHAN_USER_BASE,
+    volume = 1,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_kastet/mech.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ARC9_Ghosts.FN40GL_Lift",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_fn40gl/lift.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.FN40GL_In",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_fn40gl/in.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.FN40GL_End",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_fn40gl/end.wav",
     }
 } )

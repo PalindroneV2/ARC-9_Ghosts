@@ -179,8 +179,8 @@ SWEP.ProceduralIronFire = false
 SWEP.CaseBones = {}
 
 SWEP.IronSights = {
-    Pos = Vector(-2.76, -2, 0),
-    Ang = Angle(0.025, 0.7, 0),
+    Pos = Vector(-3.045, -2, 0.525),
+    Ang = Angle(0.025, 0.25, 0),
     Magnification = 1.1,
     AssociatedSlot = 9,
     ViewModelFOV = 60,
@@ -257,6 +257,16 @@ SWEP.AttachmentElements = {
             {3,1},
         },
     },
+    ["gst_fn40gl"] = {
+        Bodygroups = {
+            {8,1},
+        },
+    },
+    ["gst_maulub"] = {
+        Bodygroups = {
+            {8,1},
+        },
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(self, data)
@@ -298,7 +308,7 @@ SWEP.Hook_TranslateAnimation = function (self, anim)
     local suffix = ""
 
     if attached["gst_ubgl_fn40gl"] then
-        suffix = "_gl"
+        suffix = "_fn40gl"
         if self:GetUBGL() then
             suffix = "_glsetup"
         end
@@ -399,7 +409,7 @@ SWEP.Attachments = {
         Bone = "j_gun",
         Pos = Vector(-2, 0, -4),
         Ang = Angle(0, 0, 0),
-        Category = "gst_perks",
+        Category = {"gst_perks", "mwc_perks", "bo1_perkacolas"},
     },
     {
         PrintName = "Proficiency",
@@ -485,7 +495,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = "ARC9_Ghosts.Badger_MagOut", t = 0.25},
-            {s = "ARC9_Ghosts.Badger_MagIn", t = 1.5},
+            {s = "ARC9_Ghosts.Badger_MagIn", t = 1.3},
         },
     },
     ["reload_empty"] = {
@@ -515,7 +525,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = "ARC9_Ghosts.Badger_MagOut", t = 0.25},
-            {s = "ARC9_Ghosts.Badger_MagIn", t = 1.5},
+            {s = "ARC9_Ghosts.Badger_MagIn", t = 1.3},
             {s = "ARC9_Ghosts.Badger_Chamber", t = 2},
         },
     },
@@ -551,29 +561,35 @@ SWEP.Animations = {
     },
     ["fire_fn40gl"] = {
         Source = {"fire_gl"},
-        Time = 0.5,
+        Time = 0.16,
         EjectAt = 0,
+        EventTable = {
+            {s = "ARC9_Ghosts.Badger_Mech", t = 1 / 60},
+        },
     },
     ["fire_iron_fn40gl"] = {
         Source = {"fire_ads_gl"},
-        Time = 0.5,
+        Time = 0.16,
         EjectAt = 0,
+        EventTable = {
+            {s = "ARC9_Ghosts.Badger_Mech", t = 1 / 60},
+        },
     },
     ["reload_fn40gl"] = {
         Source = "reload_gl",
-        Time = 2,
+        Time = 2.53,
         EventTable = {
-            {s = "ARC9_Ghosts.Badger_MagOut", t = 0.15},
-            {s = "ARC9_Ghosts.Badger_MagIn", t = 1.1}
+            {s = "ARC9_Ghosts.Badger_MagOut", t = 0.25},
+            {s = "ARC9_Ghosts.Badger_MagIn", t = 1.3},
         },
     },
     ["reload_empty_fn40gl"] = {
         Source = "reload_empty_gl",
-        Time = 2.5,
+        Time = 3.13,
         EventTable = {
-            {s = "ARC9_Ghosts.Badger_MagOut", t = 0.15},
-            {s = "ARC9_Ghosts.Badger_MagIn", t = 1.1},
-            {s = "ARC9_Ghosts.Badger_Chamber", t = 1.65}
+            {s = "ARC9_Ghosts.Badger_MagOut", t = 0.25},
+            {s = "ARC9_Ghosts.Badger_MagIn", t = 1.3},
+            {s = "ARC9_Ghosts.Badger_Chamber", t = 2},
         },
     },
     ["enter_sprint_fn40gl"] = {
@@ -605,36 +621,39 @@ SWEP.Animations = {
     },
     ["fire_glsetup"] = {
         Source = "fire_glsetup",
-        Time = 0.3,
+        Time = 0.13,
+        EventTable = {
+            {s = "ARC9_Ghosts.Kastet_Mech", t = 1 / 60},
+        }
     },
     ["reload_ubgl_glsetup"] = {
         Source = "reload_glsetup",
         Time = 3,
         EventTable = {
-            {s = "ARC9_MWC.M203_Open", t = 0.125},
-            {s = "ARC9_MWC.M203_Load", t = 1.5},
-            {s = "ARC9_MWC.M203_Close", t = 2.25},
+            {s = "ARC9_Ghosts.FN40GL_Lift", t = 1 / 60},
+            {s = "ARC9_Ghosts.FN40GL_In", t = 1.25},
+            {s = "ARC9_Ghosts.FN40GL_End", t = 1.8},
         }
     },
     ["reload_glsetup_soh"] = {
         Source = "reload_glsetup",
         Time = 3 / 2,
         EventTable = {
-            {s = "ARC9_MWC.M203_Open", t = 0.125 / 2},
-            {s = "ARC9_MWC.M203_Load", t = 1.5 / 2},
-            {s = "ARC9_MWC.M203_Close", t = 2.25 / 2},
+            {s = "ARC9_Ghosts.FN40GL_Lift", t = 1 / 120},
+            {s = "ARC9_Ghosts.FN40GL_In", t = 1.25 / 2},
+            {s = "ARC9_Ghosts.FN40GL_End", t = 1.8 / 2},
         }
     },
     ["enter_sprint_glsetup"] = {
-        Source = "sprint_in_glsetup",
+        Source = "sprint_in_gl",
         Time = 1,
     },
     ["idle_sprint_glsetup"] = {
-        Source = "sprint_loop_glsetup",
+        Source = "sprint_loop_gl",
         Time = 30 / 40
     },
     ["exit_sprint_glsetup"] = {
-        Source = "sprint_out_glsetup",
+        Source = "sprint_out_gl",
         Time = 1,
     },
 }
