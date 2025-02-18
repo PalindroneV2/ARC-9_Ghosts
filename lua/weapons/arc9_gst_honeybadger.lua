@@ -249,7 +249,7 @@ SWEP.AttachmentElements = {
     },
     ["stock_h"] = {
         Bodygroups = {
-            {1,3},
+            {7,3},
         },
     },
     ["muzzle"] = {
@@ -264,7 +264,7 @@ SWEP.AttachmentElements = {
     },
     ["gst_maulub"] = {
         Bodygroups = {
-            {8,1},
+            {8,2},
         },
     },
 }
@@ -312,6 +312,11 @@ SWEP.Hook_TranslateAnimation = function (self, anim)
         if self:GetUBGL() then
             suffix = "_glsetup"
         end
+    elseif attached["gst_ubgl_maul"] then
+        suffix = "_mk"
+        if self:GetUBGL() then
+            suffix = "_mksetup"
+        end
     else
         suffix = ""
     end
@@ -350,7 +355,7 @@ SWEP.Attachments = {
         Bone = "j_gun",
         Pos = Vector(0,0,0),
         Ang = Angle(0, 0, 0),
-        Category = {"gst_stocks"},
+        Category = {"gst_stock_lm"},
         Installed = "gst_stock_light",
         Icon_Offset = Vector(-6, 0, 2),
     },
@@ -654,6 +659,125 @@ SWEP.Animations = {
     },
     ["exit_sprint_glsetup"] = {
         Source = "sprint_out_gl",
+        Time = 1,
+    },
+
+    --MAUL ANIMS
+
+    ["idle_mk"] = {
+        Source = "idle_mk",
+        Time = 1 / 30,
+    },
+    ["draw_mk"] = {
+        Source = "draw_mk",
+        Time = 0.5,
+        LHIK = true,
+        LHIKIn = 0.2,
+        LHIKOut = 0.25,
+    },
+    ["holster_mk"] = {
+        Source = "holster_mk",
+        Time = 0.5,
+    },
+    ["fire_mk"] = {
+        Source = {"fire_mk"},
+        Time = 0.16,
+        EjectAt = 0,
+        EventTable = {
+            {s = "ARC9_Ghosts.Badger_Mech", t = 1 / 60},
+        },
+    },
+    ["fire_iron_mk"] = {
+        Source = {"fire_ads_mk"},
+        Time = 0.16,
+        EjectAt = 0,
+        EventTable = {
+            {s = "ARC9_Ghosts.Badger_Mech", t = 1 / 60},
+        },
+    },
+    ["reload_mk"] = {
+        Source = "reload_mk",
+        Time = 2.53,
+        EventTable = {
+            {s = "ARC9_Ghosts.Badger_MagOut", t = 0.25},
+            {s = "ARC9_Ghosts.Badger_MagIn", t = 1.3},
+        },
+    },
+    ["reload_empty_mk"] = {
+        Source = "reload_empty_mk",
+        Time = 3.13,
+        EventTable = {
+            {s = "ARC9_Ghosts.Badger_MagOut", t = 0.25},
+            {s = "ARC9_Ghosts.Badger_MagIn", t = 1.3},
+            {s = "ARC9_Ghosts.Badger_Chamber", t = 2},
+        },
+    },
+    ["enter_sprint_mk"] = {
+        Source = "sprint_in_mk",
+        Time = 1,
+    },
+    ["idle_sprint_mk"] = {
+        Source = "sprint_loop_mk",
+        Time = 30 / 40
+    },
+    ["exit_sprint_mk"] = {
+        Source = "sprint_out_mk",
+        Time = 1,
+    },
+
+-- UBGL IN ANIMS -----------------------------------------------------------------
+
+    ["enter_ubgl"] = {
+        Source = "idle_mk",
+        Time = 0.01,
+    },
+    ["exit_ubgl"] = {
+        Source = "idle_mk",
+        Time = 0.01,
+    },
+    ["idle_mksetup"] = {
+        Source = "idle_mksetup",
+        Time = 1 / 30,
+    },
+    ["fire_mksetup"] = {
+        Source = "fire_mksetup",
+        Time = 0.13,
+        EventTable = {
+            {s = "ARC9_Ghosts.Kastet_Mech", t = 1 / 60},
+        }
+    },
+    ["reload_ubgl_mksetup"] = {
+        Source = "reload_mksetup",
+        Time = 3.76,
+        EventTable = {
+            {s = "ARC9_Ghosts.MAULUB_Lift", t = 1 / 60},
+            {s = "ARC9_Ghosts.MAULUB_Out", t = 0.75},
+            {s = "ARC9_Ghosts.MAULUB_In", t = 2},
+            {s = "ARC9_Ghosts.MAULUB_Hit", t = 2.5},
+            {s = "ARC9_Ghosts.MAULUB_End", t = 3.1},
+        }
+    },
+    ["reload_mksetup_soh"] = {
+        Source = "reload_mksetup",
+        Time = 3.76 / 2,
+        EventTable = {
+            {s = "ARC9_Ghosts.MAULUB_Lift", t = 1 / 120},
+            {s = "ARC9_Ghosts.MAULUB_Out", t = 0.75 / 2},
+            {s = "ARC9_Ghosts.MAULUB_In", t = 2 / 2},
+            {s = "ARC9_Ghosts.MAULUB_Hit", t = 2.5 / 2},
+            {s = "ARC9_Ghosts.MAULUB_End", t = 3.1 / 2},
+        }
+    },
+    ["enter_sprint_mksetup"] = {
+        Source = "sprint_in_mk",
+        Time = 1,
+    },
+    ["idle_sprint_mksetup"] = {
+        Source = "sprint_loop_mk",
+        Time = 30 / 40
+    },
+    ["exit_sprint_mksetup"] = {
+        Source = "sprint_out_mk",
         Time = 1,
     },
 }
