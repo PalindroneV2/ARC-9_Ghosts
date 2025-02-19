@@ -147,8 +147,9 @@ SWEP.ShootVolume = 125
 SWEP.ShootPitch = 100
 SWEP.ShootPitchVariation = 0
 
-SWEP.ShootSound = "ARC9_Ghosts.Badger_Fire"
+SWEP.ShootSound = "ARC9_Ghosts.R5RGP_Fire"
 SWEP.ShootSoundSilenced = "ARC9_Ghosts.Badger_Fire"
+SWEP.DistantShootSound = "ARC9_Ghosts.R5RGP_Mech"
 SWEP.Silencer = true
 
 SWEP.UBGLIntegralReload = true -- The UBGL uses reload animations that are baked into the gun.
@@ -383,14 +384,6 @@ SWEP.Attachments = {
         Pos = Vector(10.25, -0.75, 1.75),
         Ang = Angle(0, 0, 90),
         Category = {"cod_rail_tactical"},
-    },
-    {
-        PrintName = "Tactical Top",
-        DefaultCompactName = "TAC T",
-        Bone = "j_gun",
-        Pos = Vector(8.25, 0, 2.75),
-        Ang = Angle(0, 0, 180),
-        Category = {"cod_tactical"},
     },
     {
         PrintName = "Fire Control Group",
@@ -727,14 +720,14 @@ SWEP.Animations = {
 
 -- UBGL IN ANIMS -----------------------------------------------------------------
 
-    ["enter_ubgl"] = {
-        Source = "idle_mk",
-        Time = 0.01,
-    },
-    ["exit_ubgl"] = {
-        Source = "idle_mk",
-        Time = 0.01,
-    },
+["enter_mksetup"] = {
+    Source = "idle_mk",
+    Time = 0.01,
+},
+["exit_mksetup"] = {
+    Source = "idle_mk",
+    Time = 0.01,
+},
     ["idle_mksetup"] = {
         Source = "idle_mksetup",
         Time = 1 / 30,

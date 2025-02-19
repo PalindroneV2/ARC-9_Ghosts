@@ -6,7 +6,8 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "P226"
 SWEP.Class = "Pistol"
-SWEP.Description = [[9mm swiss pistol. Currently the standard issue sidearm for US forces.
+SWEP.Description = [[Developed as an improved, high-capacity version of the SIG-Sauer P220 to compete in the U.S. military's XM9 trials for a new service pistol.
+While it ultimately lost to the Beretta 92FS, the P226 gained widespread adoption among law enforcement and military forces worldwide due to its reliability and accuracy.
 ]]
 SWEP.Trivia = {
     Manufacturer = "SIG-Sauer",
@@ -146,7 +147,7 @@ SWEP.ShootPitchVariation = 0
 
 SWEP.ShootSound = "ARC9_Ghosts.P226_Fire"
 SWEP.ShootSoundSilenced = "ARC9_COD4E.1911_Sil"
-SWEP.DistantShootSound = ""
+SWEP.DistantShootSound = "ARC9_Ghosts.P226_Mech"
 
 --SWEP.MuzzleEffect = "muzzleflash_1"
 SWEP.MuzzleParticle = "muzzleflash_pistol" -- Used for some muzzle effects.
@@ -346,7 +347,7 @@ SWEP.Animations = {
         Source = "ads_up_empty",
         Time = 1,
     },
-    ["idle_ads"] = {
+    ["idle_iron"] = {
         Source = {"idle_ads"},
         Time = 1 / 30,
     },
@@ -386,41 +387,41 @@ SWEP.Animations = {
         Source = {"fire"},
         Time = 5 / 30,
         EjectAt = 1 / 30,
-        EventTable = {{s = "ARC9_Ghosts.P226_Mech", t = 1 / 60},},
+        EventTable = {{s = "", t = 1 / 60},},
     },
     ["fire_empty"] = {
         Source = "fire_last",
         Time = 5 / 30,
         EjectAt = 1 / 30,
-        EventTable = {{s = "ARC9_Ghosts.P226_Mech", t = 1 / 60},},
+        EventTable = {{s = "", t = 1 / 60},},
     },
     ["fire_sights"] = {
         Source = "fire_ads",
         Time = 5 / 30,
         EjectAt = 1 / 30,
-        EventTable = {{s = "ARC9_Ghosts.P226_Mech", t = 1 / 60},},
+        EventTable = {{s = "", t = 1 / 60},},
     },
     ["fire_sights_empty"] = {
-        Source = "fire_last_ads_1",
+        Source = "fire_last_ads",
         Time = 5 / 30,
         EjectAt = 1 / 30,
-        EventTable = {{s = "ARC9_Ghosts.P226_Mech", t = 1 / 60},},
+        EventTable = {{s = "", t = 1 / 60},},
     },
     ["reload"] = {
         Source = "reload",
-        Time = 1.5,
+        Time = 1.8,
         EventTable = {
-            {s = "ARC9_Ghosts.P226_MagOut", t = 0.25},
-            {s = "ARC9_Ghosts.P226_MagIn", t = 1}
+            {s = "ARC9_Ghosts.P226_MagOut", t = 0.15},
+            {s = "ARC9_Ghosts.P226_MagIn", t = 0.9}
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         Time = 2,
         EventTable = {
-            {s = "ARC9_Ghosts.P226_MagOut", t = 0.25},
-            {s = "ARC9_Ghosts.P226_MagIn", t = 1},
-            {s = "ARC9_Ghosts.P226_Chamber", t = 1.5}
+            {s = "ARC9_Ghosts.P226_MagOut", t = 0.15},
+            {s = "ARC9_Ghosts.P226_MagIn", t = 0.9},
+            {s = "ARC9_Ghosts.P226_Chamber", t = 1.3}
         },
     },
     ["enter_sprint"] = {
