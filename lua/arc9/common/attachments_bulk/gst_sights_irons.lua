@@ -1,7 +1,7 @@
 local ATT = {}
 
-ATT.PrintName = "Alternate Iron Sights"
-ATT.CompactName = "ALT IRONS"
+ATT.PrintName = "Magpul Back=Up Sights"
+ATT.CompactName = "MBUS ALT"
 ATT.Icon = Material("entities/gst_generic.png")
 ATT.Description = [["You will aim with sights of iron and you will like it."
 
@@ -13,4 +13,4 @@ ATT.Free = true
 ATT.Category = {"gst_alt_irons"}
 ATT.ActivateElements = {"gst_irons_alt", "gst_mbus"}
 
-ARC9.LoadAttachment(ATT, "gst_irons_mbus")
+ARC9.LoadAttachment(ATT, "gst_irons_mbus_bodygrouped")
