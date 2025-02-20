@@ -144,6 +144,56 @@ sound.Add( {
     }
 } )
 
+-- M9A1
+
+sound.Add( {
+    name = "ARC9_Ghosts.M9A1_Fire",
+    channel = CHAN_STATIC,
+    volume = 0.75,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_M9A1/fire.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ARC9_Ghosts.M9A1_Mech",
+    channel = CHAN_USER_BASE,
+    volume = 1,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_M9A1/mech.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ARC9_Ghosts.M9A1_Chamber",
+    channel = CHAN_USER_BASE,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_M9A1/chamber.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.M9A1_MagIn",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_M9A1/in.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.M9A1_MagOut",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_M9A1/out.wav",
+    }
+} )
+
 -- P226
 
 sound.Add( {
