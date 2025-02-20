@@ -150,7 +150,7 @@ SWEP.ShootPitchVariation = 0
 SWEP.ShootSound = "ARC9_Ghosts.R5RGP_Fire"
 SWEP.ShootSoundSilenced = "ARC9_Ghosts.Badger_Fire"
 SWEP.DistantShootSound = "ARC9_Ghosts.R5RGP_Mech"
-SWEP.Silencer = true
+SWEP.Silencer = false
 
 SWEP.UBGLIntegralReload = true -- The UBGL uses reload animations that are baked into the gun.
 SWEP.DoFireAnimationUBGL = true
@@ -241,6 +241,11 @@ SWEP.StandardPresets = {
 }
 
 SWEP.AttachmentElements = {
+    ["300blk"] = {
+        Bodygroups = {
+            {3,1},
+        },
+    },
     ["stock_l"] = {
         Bodygroups = {
             {4,2},
@@ -266,15 +271,41 @@ SWEP.AttachmentElements = {
             {5,2},
         },
     },
+    ["gst_mbus"] = {
+        Bodygroups = {
+            {2,1},
+        },
+    },
 }
+
+SWEP.IronSightsHook = function(self)
+    local attached = self:GetElements()
+
+    local newpos = ironsightpos
+    local newang = ironsightang
+
+    if attached["gst_mbus"] then
+        newpos = Vector(-2.825, -2, 0.5)
+        newang = Angle(0.0125, 0-0.05, 0)
+    end
+
+    return {Pos = newpos, Ang = newang, Magnification = 1.1, ViewModelFOV = 60, CrosshairInSights = false,}
+end
 
 SWEP.Hook_ModifyBodygroups = function(self, data)
 
     local vm = data.model
     local attached = data.elements
 
-    if attached["mount"] then
+    if attached["gst_mbus"] then
+        vm:SetBodygroup(2,1)
+    end
+
+    if attached["cod_opticc"] or attached["cod_rail_riser"] then
         vm:SetBodygroup(2,3)
+        if attached["gst_mbus"] then
+            vm:SetBodygroup(2,2)
+        end
     end
 
     local camo = 0
@@ -336,8 +367,7 @@ SWEP.Attachments = {
         Bone = "j_gun",
         Pos = Vector(4.5, 0, 1.65),
         Ang = Angle(0, 0, 0),
-        Category = {"cod_optic", "cod_rail_riser"},
-        InstalledElements = {"mount"},
+        Category = {"cod_optic", "cod_rail_riser", "gst_alt_irons"},
     },
     {
         PrintName = "Muzzle",
@@ -352,7 +382,7 @@ SWEP.Attachments = {
     {
         PrintName = "Barrel",
         Bone = "j_gun",
-        Pos = Vector(5, 0, 3.5),
+        Pos = Vector(7, 0, 0.45),
         Ang = Angle(0, 0, 0),
         Category = {"gst_badger_barrels"},
     },
@@ -401,11 +431,19 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Fire Control Group",
-        DefaultCompactName = "BST",
+        DefaultCompactName = "AUTO",
         Bone = "j_gun",
         Pos = Vector(0.05, 0, 0.8),
         Ang = Angle(0, 0, 0),
         Category = {"gst_fcg"},
+    },
+    {
+        PrintName = "Magazine",
+        DefaultCompactName = "5.56MM",
+        Bone = "j_gun",
+        Pos = Vector(4.5, 0, -6),
+        Ang = Angle(0, 0, 0),
+        Category = {"gst_r5rgp_ammo"},
     },
     {
         PrintName = "Ammunition",

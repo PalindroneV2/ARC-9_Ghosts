@@ -4,7 +4,7 @@ ATT = {}
 
 ATT.PrintName = "Heavy Stock"
 ATT.CompactName = "HEAVY"
-ATT.Icon = Material("entities/gst_atts/other/stock.png")
+ATT.Icon = Material("entities/gst_generic.png")
 ATT.Description = [[Offers best possible recoil control but handling and mobility are hindered.]]
 ATT.CustomPros = {}
 ATT.CustomCons = {}
@@ -42,12 +42,12 @@ ATT = {}
 
 ATT.PrintName = "Light Stock"
 ATT.CompactName = "LIGHT"
-ATT.Icon = Material("entities/gst_atts/other/stock.png")
+ATT.Icon = Material("entities/gst_generic.png")
 ATT.Description = [[Lightweight stock that doesn't provide as much recoil control but helps mobility.]]
 ATT.CustomPros = {}
 ATT.CustomCons = {}
 ATT.SortOrder = 2
-ATT.MenuCategory = "ARC9 - MWC Attachments"
+ATT.MenuCategory = "ARC9 - Ghosts Attachments"
 ATT.Free = false
 
 ATT.Category = {"gst_stocks", "gst_stock_l", "gst_stock_lm", "gst_stock_lh"}
@@ -79,12 +79,12 @@ ATT = {}
 
 ATT.PrintName = "Medium Stock"
 ATT.CompactName = "MED"
-ATT.Icon = Material("entities/gst_atts/other/stock.png")
+ATT.Icon = Material("entities/gst_generic.png")
 ATT.Description = [[A stock that provides a balance between mobility and recoil control.]]
 ATT.CustomPros = {}
 ATT.CustomCons = {}
 ATT.SortOrder = 1
-ATT.MenuCategory = "ARC9 - MWC Attachments"
+ATT.MenuCategory = "ARC9 - Ghosts Attachments"
 ATT.Free = false
 
 ATT.Category = {"gst_stocks", "gst_stock_m", "gst_stock_lm", "gst_stock_mh"}
@@ -117,12 +117,12 @@ ATT = {}
 
 ATT.PrintName = "Ultralight Stock"
 ATT.CompactName = "UL Stock"
-ATT.Icon = Material("entities/gst_atts/other/stock.png")
+ATT.Icon = Material("entities/gst_generic.png")
 ATT.Description = [[Very lightweight and reduces hip fire spread, but barely provides any recoil control.]]
 ATT.CustomPros = {}
 ATT.CustomCons = {}
 ATT.SortOrder = 4
-ATT.MenuCategory = "ARC9 - MWC Attachments"
+ATT.MenuCategory = "ARC9 - Ghosts Attachments"
 ATT.Free = false
 
 ATT.Category = {"gst_stock_ul"}
@@ -158,12 +158,12 @@ ATT = {}
 
 ATT.PrintName = "Ultra Heavy"
 ATT.CompactName = "ULTRAHEAVY"
-ATT.Icon = Material("entities/gst_atts/other/stock.png")
+ATT.Icon = Material("entities/gst_generic.png")
 ATT.Description = [[Offers best possible recoil control but handling and mobility are hindered.]]
 ATT.CustomPros = {}
 ATT.CustomCons = {}
 ATT.SortOrder = 0
-ATT.MenuCategory = "ARC9 - MWC Attachments"
+ATT.MenuCategory = "ARC9 - Ghosts Attachments"
 ATT.Free = false
 
 ATT.Category = {"gst_stock_uh"}
@@ -189,12 +189,12 @@ ATT = {}
 
 ATT.PrintName = "Pro Stock"
 ATT.CompactName = "PRO"
-ATT.Icon = Material("entities/gst_atts/other/stock.png")
+ATT.Icon = Material("entities/gst_generic.png")
 ATT.Description = [[A stock that provides a balance between mobility and recoil control.]]
 ATT.CustomPros = {}
 ATT.CustomCons = {}
 ATT.SortOrder = 1
-ATT.MenuCategory = "ARC9 - MWC Attachments"
+ATT.MenuCategory = "ARC9 - Ghosts Attachments"
 ATT.Free = false
 
 ATT.Category = {"gst_stock_pro"}

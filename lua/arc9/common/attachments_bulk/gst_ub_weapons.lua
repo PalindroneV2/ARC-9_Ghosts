@@ -4,7 +4,7 @@ ATT = {}
 
 ATT.PrintName = [[FN 40GL Grenade Launcher]]
 ATT.CompactName = [[FN 40GL]]
-ATT.Icon = Material("entities/mwc_atts/ubs/m203.png")
+ATT.Icon = Material("entities/gst_generic.png")
 ATT.Description = [[Underbarrel grenade launcher that fires 40mm High Explosive rounds.
 Reduced handling.]]
 ATT.CustomPros = {}
@@ -49,13 +49,13 @@ ATT = {}
 
 ATT.PrintName = [[MAUL Underbarrel Shotgun]]
 ATT.CompactName = [[MAUL]]
-ATT.Icon = Material("entities/bo1_atts/ubs/masterkey.png")
+ATT.Icon = Material("entities/gst_generic.png")
 ATT.Description = [[Underbarrel shotgun that holds 4 12 gauge shells.
 Reduced handling.]]
 ATT.CustomPros = {}
 ATT.CustomCons = {}
 ATT.SortOrder = 0
-ATT.MenuCategory = "ARC9 - BO1 Attachments"
+ATT.MenuCategory = "ARC9 - Ghosts Attachments"
 ATT.Free = false
 
 ATT.Category = {"gst_maulub"}

@@ -150,6 +150,7 @@ SWEP.ShootPitchVariation = 0
 SWEP.ShootSound = "ARC9_Ghosts.R5RGP_Fire"
 SWEP.ShootSoundSilenced = "ARC9_Ghosts.Badger_Fire"
 SWEP.DistantShootSound = "ARC9_Ghosts.R5RGP_Mech"
+SWEP.DistantShootSoundSilenced  = ""
 SWEP.Silencer = true
 
 SWEP.UBGLIntegralReload = true -- The UBGL uses reload animations that are baked into the gun.
@@ -347,7 +348,7 @@ SWEP.Attachments = {
     {
         PrintName = "Barrel",
         Bone = "j_gun",
-        Pos = Vector(5, 0, 3.5),
+        Pos = Vector(7, 0, 1.75),
         Ang = Angle(0, 0, 0),
         Category = {"gst_badger_barrels"},
     },
@@ -387,7 +388,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Fire Control Group",
-        DefaultCompactName = "BST",
+        DefaultCompactName = "AUTO",
         Bone = "j_gun",
         Pos = Vector(0.05, 0, 0.8),
         Ang = Angle(0, 0, 0),
