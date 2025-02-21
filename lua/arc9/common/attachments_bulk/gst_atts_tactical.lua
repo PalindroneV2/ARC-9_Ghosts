@@ -14,7 +14,7 @@ ATT.Free = false
 
 ATT.Category = {"cod_tactical_pistols", "cod_tactical_revolver"}
 
-ATT.Model = "models/weapons/arc9/atts/gst_att_inforceapl.mdl"
+ATT.Model = "models/weapons/arc9/gst_atts/gst_att_inforceapl.mdl"
 ATT.Scale = 1
 ATT.ModelOffset = Vector(-0.25,0,-0.225)
 ATT.ActivateElements = {"gst_apl_lightr"}
