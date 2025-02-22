@@ -147,11 +147,14 @@ SWEP.ShootVolume = 125
 SWEP.ShootPitch = 100
 SWEP.ShootPitchVariation = 0
 
-SWEP.ShootSound = "ARC9_COD4E.MP5_Fire"
-SWEP.ShootSoundSilenced = "ARC9_COD4E.MP5_Sil"
+SWEP.ShootSound = "ARC9_Ghosts.Badger_Fire"
+SWEP.ShootSoundSilenced = "ARC9_Ghosts.K7_Fire"
+SWEP.DistantShootSound = "ARC9_Ghosts.K7_Mech"
+SWEP.DistantShootSoundSilenced  = ""
+SWEP.Silencer = true
 
 --SWEP.MuzzleEffect = "muzzleflash_1"
-SWEP.MuzzleParticle = "muzzleflash_smg" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "muzzleflash_suppressed" -- Used for some muzzle effects.
 
 SWEP.ShellModel = "models/shells/shell_9mm.mdl"
 SWEP.ShellScale = 1.25
@@ -172,9 +175,12 @@ SWEP.ProceduralIronFire = false
 
 SWEP.CaseBones = {}
 
+local ironsightpos = Vector(-2.49, -2, 0.675)
+local ironsightang = Angle(0.025, 0, 0)
+
 SWEP.IronSights = {
-    Pos = Vector(-3.19, 0, 1),
-    Ang = Angle(-0.025, -0.15, 0),
+    Pos = ironsightpos,
+    Ang = ironsightang,
     Magnification = 1.1,
     ViewModelFOV = 60,
     AssociatedSlot = 9,
@@ -182,9 +188,9 @@ SWEP.IronSights = {
     SwitchToSound = "", -- sound that plays when switching to this sight
 }
 
-SWEP.SightMidPoint = {
-    Pos = Vector(-1.6, 0, 0),
-    Ang = Angle(-0.0125, -0.075, -2.5),
+SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
+    Pos = ironsightpos / 2,
+    Ang = ironsightang / 2,
 }
 
 SWEP.HoldTypeHolstered = "passive"
@@ -224,98 +230,30 @@ SWEP.BarrelLength = 0 -- = 25
 SWEP.ExtraSightDist = 5
 
 SWEP.AttachmentElements = {
-    ["mount"] = {
-        Bodygroups = {
-            {2,1}
-        },
-    },
     ["stock_l"] = {
         Bodygroups = {
-            {3,1}
+            {2,1},
         },
     },
     ["stock_m"] = {
         Bodygroups = {
-            {3,2}
+            {2,3},
         },
     },
-    ["stock_h"] = {
+    ["stock_ul"] = {
         Bodygroups = {
-            {3,3}
-        },
-    },
-    ["stock_pro"] = {
-        Bodygroups = {
-            {3,4}
-        },
-    },
-    ["barrel_std"] = {
-        AttPosMods = {
-            [3] = {
-                Pos = Vector(13.5, 0, 2.04),
-            },
-            [5] = {
-                Pos = Vector(9.25, 0, 1.3),
-            },
-        },
-    },
-    ["mwc_igrip"] = {
-        Bodygroups = {
-            {4,1}
+            {2,2},
         },
     },
 }
-
-SWEP.IronSightsHook = function(self)
-    local attached = self:GetElements()
-    local newpos = Vector(-3.175, -3, 1)
-    local newang = Angle(0, -0.2, 0)
-
-    if attached["top_g36c"] then
-        newpos = Vector(-3.175, -3.25, 0.4)
-        newang = Angle(0, 0.0, 0)
-    end
-
-    return {Pos = newpos, Ang = newang, Magnification = 1.1, ViewModelFOV = 60, CrosshairInSights = false,}
-
-end
 
 SWEP.Hook_ModifyBodygroups = function(self, data)
     local vm = data.model
     local attached = data.elements
 
-    local isoptic = "cod_optic" or "cod_rail_riser"
-
-    local body = 0
-    local rail = 0
-    local sight = 0
-    if attached["barrel_std"] then
-        body = 1
-        sight = 1
+    if attached["mount"] then
+        vm:SetBodygroup(5,1)
     end
-    if attached["mp5k"] then
-        if body == 1 then
-            rail = 2
-            sight = 1
-        else
-            rail = 1
-            sight = 0
-        end
-    end
-    if attached["top_g36c"] then
-        rail = 4
-        sight = 3
-        if attached["barrel_std"] then
-            rail = 3
-            sight = 2
-        end
-    end
-    if attached[isoptic] then
-        sight = 4
-    end
-    vm:SetBodygroup(0, body)
-    vm:SetBodygroup(1, rail)
-    vm:SetBodygroup(2, sight)
 
     local camo = 0
     if attached["universal_camo"] then
@@ -344,18 +282,10 @@ SWEP.HookP_NameChange = function(self, name)
 
     local attached = self:GetElements()
 
-    local gunname = "HK MP5K"
-    if attached["barrel_std"] then
-        gunname = "HK MP5A3"
-        if attached["stock_h"] then
-            gunname = "HK MP5A2"
-        end
-    end
+    local gunname = "Daewoo K7"
+
     if attached["bo1_pap"] then
-        gunname = "HK MP115 Kollider"
-        if attached["barrel_std"] then
-            gunname = "HK MP115 Nimrod"
-        end
+        gunname = "K7PAP"
     end
 
     return gunname
@@ -363,81 +293,86 @@ end
 
 SWEP.Attachments = {
     {
-        PrintName = "Rail",
+        PrintName = "Optic",
         Bone = "j_gun",
-        Pos = Vector(1.5, 0, 3.3),
+        Pos = Vector(3, 0, 2.9),
         Ang = Angle(0, 0, 0),
-        Category = {"hk_rail_riser", "mp5k_mw2_rail", "mw2e_mp5rail"},
-        -- Installed = "mw2e_mp5k_rail_ris"
+        Category = {"cod_optic", "cod_rail_riser"},
+        InstalledElements = {"mount"},
     },
     {
         PrintName = "Stock",
         Bone = "j_gun",
-        Pos = Vector(-4, 0, 2.5),
+        Pos = Vector(0,0,0),
         Ang = Angle(0, 0, 0),
-        Category = {"mwc_stocks", "mwc_stock_pro"},
-    },
-    {
-        PrintName = "Muzzle",
-        Bone = "j_gun",
-        Scale = Vector(1.2,1.2,1.2),
-        Pos = Vector(11, 0, 2.04),
-        Ang = Angle(0, 0, 0),
-        Category = {"cod_muzzle_smg", "cod_muzzle_pistol"},
-    },
-    {
-        PrintName = "Barrel",
-        Bone = "j_gun",
-        Scale = Vector(1,1,1),
-        Pos = Vector(6, 0, 2.05),
-        Ang = Angle(0, 0, 0),
-        Category = {"mw2e_mp5k_barrel"},
+        Category = {"gst_stock_lm", "gst_stock_ul"},
+        Installed = "gst_stock_light",
+        Icon_Offset = Vector(-6, 0, 0),
     },
     {
         PrintName = "Underbarrel",
+        DefaultCompactName = "UB",
         Bone = "j_gun",
-        Scale = Vector(1,1,1),
-        Pos = Vector(8.375, 0, 1.3),
+        Pos = Vector(9.25, 0, 0.1),
         Ang = Angle(0, 0, 0),
-        Category = {"cod_rail_underbarrel"},
-        ExcludeElements = {"mp5k"},
+        Category = { "cod_rail_underbarrel"},
+        InstalledElements = {"grip_cover"},
     },
     {
-        PrintName = "Firing Group",
-        DefaultCompactName = "S-1-3-F",
+        PrintName = "Tactical Right",
+        DefaultCompactName = "TAC R",
         Bone = "j_gun",
-        Pos = Vector(0, 0, 0.5),
+        Pos = Vector(9.25, 1, 1),
+        Ang = Angle(0, 0, -90),
+        Category = {"cod_rail_tactical"},
+        RequireElements = {"cod_grips"}
+    },
+    {
+        PrintName = "Tactical Left",
+        DefaultCompactName = "TAC L",
+        Bone = "j_gun",
+        Pos = Vector(9.25, -1, 1),
+        Ang = Angle(0, 0, 90),
+        Category = {"cod_rail_tactical"},
+        RequireElements = {"cod_grips"}
+    },
+    {
+        PrintName = "Fire Control Group",
+        DefaultCompactName = "AUTO",
+        Bone = "j_gun",
+        Pos = Vector(0.05, 0, 0.8),
         Ang = Angle(0, 0, 0),
-        Category = {"bo1_fcg"},
+        Category = {"gst_fcg"},
     },
     {
         PrintName = "Ammunition",
         DefaultCompactName = "AMMO",
-        Bone = "tag_clip",
-        Pos = Vector(1, 0, -6),
+        Bone = "j_gun",
+        Pos = Vector(4.5, 0, -4),
         Ang = Angle(0, 0, 0),
-        Category = {"bo1_ammo", "bo1_pap"},
+        Category = {"gst_ammo", "bo1_pap"},
     },
     {
         PrintName = "Perk",
         DefaultCompactName = "PERK",
         Bone = "j_gun",
-        Pos = Vector(2, 0, -3),
+        Pos = Vector(-2, 0, -4),
         Ang = Angle(0, 0, 0),
-        Category = "mwc_perk",
+        Category = {"gst_perks", "mwc_perks", "bo1_perkacolas"},
     },
     {
         PrintName = "Proficiency",
         DefaultCompactName = "PRO",
         Bone = "j_gun",
-        Pos = Vector(0, 0, -3),
+        Pos = Vector(-4, 0, -4),
         Ang = Angle(0, 0, 0),
         Category = "mwc_proficiency",
     },
     {
         PrintName = "Cosmetic",
+        DefaultName = "No Camo",
         Bone = "j_gun",
-        Pos = Vector(-8.5, 0, 2.65),
+        Pos = Vector(-2, 0, 4),
         Ang = Angle(0, 0, 0),
         Category = {"universal_camo"},
         CosmeticOnly = true,
@@ -522,8 +457,10 @@ SWEP.Animations = {
         Time = 77 / 35,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         EventTable = {
-            {s = "ARC9_COD4E.MP5_MagOut", t = 16 / 35},
-            {s = "ARC9_COD4E.MP5_MagIn", t = 47 / 35}
+            {s = "ARC9_Ghosts.K7_Lift", t = 1 / 60},
+            {s = "ARC9_Ghosts.K7_MagOut", t = 16 / 35},
+            {s = "ARC9_Ghosts.K7_MagIn", t = 47 / 35},
+            {s = "ARC9_Ghosts.K7_End", t = 60 / 35},
         },
         IKTimeLine = {
             {
@@ -537,12 +474,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.85,
+                t = 0.8,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 0.95,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -553,9 +490,11 @@ SWEP.Animations = {
         Time = 93 / 35,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         EventTable = {
-            {s = "ARC9_COD4E.MP5_MagOut", t = 16 / 35},
-            {s = "ARC9_COD4E.MP5_MagIn", t = 47 / 35},
-            {s = "ARC9_COD4E.MP5_Chamber", t = 63 / 35},
+            {s = "ARC9_Ghosts.K7_Lift", t = 1 / 60},
+            {s = "ARC9_Ghosts.K7_MagOut", t = 16 / 35},
+            {s = "ARC9_Ghosts.K7_MagIn", t = 47 / 35},
+            {s = "ARC9_Ghosts.K7_Chamber", t = 63 / 35},
+            {s = "ARC9_Ghosts.K7_End", t = 75 / 35},
         },
         IKTimeLine = {
             {
@@ -569,12 +508,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.85,
+                t = 0.8,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 0.95,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },

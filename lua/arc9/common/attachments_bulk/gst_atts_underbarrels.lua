@@ -101,14 +101,14 @@ ARC9.LoadAttachment(ATT, "gst_ubgl_maul")
 ATT = {}
 
 ATT.PrintName = "Folding Foregrip"
-ATT.CompactName = [[SCAR]]
-ATT.Icon = Material("entities/atts/ubs/mw2_grip.png", "mips smooth")
+ATT.CompactName = [[Folding]]
+ATT.Icon = Material("entities/gst_generic.png", "mips smooth")
 ATT.Description = [[Folding vertical foregrip that goes under the weapon's handguard.
 Belongs to COD Ghosts.]]
 ATT.CustomPros = {}
 ATT.CustomCons = {}
 ATT.SortOrder = 4
-ATT.MenuCategory = "ARC9 - MWC Attachments"
+ATT.MenuCategory = "ARC9 - Ghosts Attachments"
 ATT.Free = false
 
 ATT.Category = {"cod_grips"}

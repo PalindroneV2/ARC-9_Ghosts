@@ -7,7 +7,7 @@ sound.Add( {
     volume = 0.75,
     level = 100,
     sound = {
-        "^weapons/ARC9/gst_honeybadger/stereo.wav",
+        "^weapons/ARC9/gst_honeybadger/fire.wav",
     }
 } )
 
@@ -84,7 +84,7 @@ sound.Add( {
     volume = 0.75,
     level = 100,
     sound = {
-        "^weapons/ARC9/gst_r5rgp/stereo.wav",
+        "^weapons/ARC9/gst_r5rgp/fire.wav",
     }
 } )
 
@@ -141,6 +141,74 @@ sound.Add( {
     level = 100,
     sound = {
         "^weapons/ARC9/gst_r5rgp/first_draw.wav",
+    }
+} )
+
+-- R5 RGP
+
+sound.Add( {
+    name = "ARC9_Ghosts.K7_Fire",
+    channel = CHAN_STATIC,
+    volume = 0.75,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_k7/fire.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ARC9_Ghosts.K7_Mech",
+    channel = CHAN_USER_BASE,
+    volume = 1,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_k7/mech.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ARC9_Ghosts.K7_Chamber",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_k7/chamber.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.K7_MagIn",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_k7/in.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.K7_MagOut",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_k7/out.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.K7_Lift",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_k7/lift.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.K7_End",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_k7/end.wav",
     }
 } )
 

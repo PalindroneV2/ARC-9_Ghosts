@@ -301,7 +301,7 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
         vm:SetBodygroup(2,1)
     end
 
-    if attached["cod_opticc"] or attached["cod_rail_riser"] then
+    if attached["cod_optic"] or attached["cod_rail_riser"] then
         vm:SetBodygroup(2,3)
         if attached["gst_mbus"] then
             vm:SetBodygroup(2,2)
