@@ -72,12 +72,12 @@ ATT.UBGLFiremodeName = "MAUL"
 ATT.UBGLChamberSize = 0
 
 ATT.FirstShootSoundUBGL = false
-ATT.ShootSoundUBGL = "ARC9_BO1.MK_Fire"
-ATT.DistantShootSoundUBGL = false
+ATT.ShootSoundUBGL = "ARC9_Ghosts.MAUL_Fire"
+ATT.DistantShootSoundUBGL = "ARC9_Ghosts.MAUL_Fire"
 ATT.HasSightsUBGL = false
 
-ATT.EnterUBGLSound = "ARC9_BO1.MK_Back"
-ATT.ExitUBGLSound = "ARC9_BO1.MK_Fwd"
+ATT.EnterUBGLSound = "ARC9_Ghosts.MAUL_Lift"
+ATT.ExitUBGLSound = "ARC9_Ghosts.MAUL_Lift"
 
 ATT.MuzzleParticleUBGL = "muzzleflash_m3"
 
@@ -113,7 +113,7 @@ ATT.Free = false
 
 ATT.Category = {"cod_grips"}
 
-ATT.Model = "models/weapons/arc9/gst_atts/gst_att_folding_grip.mdl"
+ATT.Model = "models/weapons/arc9/gst_atts/gst_att_grip_folding.mdl"
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
 
@@ -123,3 +123,29 @@ ATT.LHIK = true
 ATT.LHIK_Priority = 5
 
 ARC9.LoadAttachment(ATT, "gst_grip_folding")
+
+ATT = {}
+
+ATT.PrintName = "Angled Foregrip"
+ATT.CompactName = [[Angled]]
+ATT.Icon = Material("entities/gst_generic.png", "mips smooth")
+ATT.Description = [[Angled foregrip that goes under the weapon's handguard.
+Belongs to COD Ghosts.]]
+ATT.CustomPros = {}
+ATT.CustomCons = {}
+ATT.SortOrder = 4
+ATT.MenuCategory = "ARC9 - Ghosts Attachments"
+ATT.Free = false
+
+ATT.Category = {"cod_grips"}
+
+ATT.Model = "models/weapons/arc9/gst_atts/gst_att_grip_angled.mdl"
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, -0.5)
+
+ATT.RecoilMult = 0.85
+ATT.RecoilUpMult = 0.85
+ATT.LHIK = true
+ATT.LHIK_Priority = 5
+
+ARC9.LoadAttachment(ATT, "gst_grip_angled")

@@ -6,7 +6,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Remington R5"
 SWEP.Class = "Assault Rifle"
-SWEP.Description = [[Badger of Honey.]]
+SWEP.Description = [[A versatile, piston-driven assault rifle designed for reliability and durability in harsh conditions.]]
 SWEP.Trivia = {
     Manufacturer = "Remington",
     Calibre = "5.56x45mm NATO",
@@ -459,7 +459,7 @@ SWEP.Attachments = {
         Bone = "j_gun",
         Pos = Vector(-2, 0, -4),
         Ang = Angle(0, 0, 0),
-        Category = {"gst_perks", "mwc_perks", "bo1_perkacolas"},
+        Category = {"gst_perks", "mwc_perk", "bo1_perkacolas"},
     },
     {
         PrintName = "Proficiency",

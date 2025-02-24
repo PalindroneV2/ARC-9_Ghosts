@@ -323,6 +323,13 @@ SWEP.Hook_TranslateAnimation = function (self, anim)
         suffix = ""
     end
 
+    if anim == "enter_ubgl" and attached["gst_ubgl_maul"] then
+        return "enter_mksetup"
+    end
+    if anim == "exit_ubgl" and attached["gst_ubgl_maul"] then
+        return "exit_mksetup"
+    end
+
     return anim .. suffix
 end
 
@@ -408,7 +415,7 @@ SWEP.Attachments = {
         Bone = "j_gun",
         Pos = Vector(-2, 0, -4),
         Ang = Angle(0, 0, 0),
-        Category = {"gst_perks", "mwc_perks", "bo1_perkacolas"},
+        Category = {"gst_perks", "mwc_perk", "bo1_perkacolas"},
     },
     {
         PrintName = "Proficiency",

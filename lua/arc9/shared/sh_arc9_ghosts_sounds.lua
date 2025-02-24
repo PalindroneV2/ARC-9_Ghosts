@@ -76,6 +76,83 @@ sound.Add( {
     }
 } )
 
+-- M27
+
+sound.Add( {
+    name = "ARC9_Ghosts.M27_Fire",
+    channel = CHAN_STATIC,
+    volume = 0.75,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_m27/fire.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ARC9_Ghosts.M27_Mech",
+    channel = CHAN_USER_BASE,
+    volume = 1,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_m27/mech.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ARC9_Ghosts.M27_Chamber",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_m27/chamber.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.M27_MagIn",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_m27/in.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.M27_MagOut",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_m27/out.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.M27_End",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_m27/end.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.M27_FirstLift",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_m27/first_lift.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.M27_FirstChamber",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_m27/first_chamber.wav",
+    }
+} )
+
 -- R5 RGP
 
 sound.Add( {

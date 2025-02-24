@@ -358,7 +358,7 @@ SWEP.Attachments = {
         Bone = "j_gun",
         Pos = Vector(-2, 0, -4),
         Ang = Angle(0, 0, 0),
-        Category = {"gst_perks", "mwc_perks", "bo1_perkacolas"},
+        Category = {"gst_perks", "mwc_perk", "bo1_perkacolas"},
     },
     {
         PrintName = "Proficiency",
