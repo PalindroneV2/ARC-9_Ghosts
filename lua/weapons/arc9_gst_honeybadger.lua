@@ -4,9 +4,9 @@ SWEP.Category = "ARC9 - COD: Ghosts" -- edit this if you like
 SWEP.SubCategory = "Assault Rifles"
 SWEP.AdminOnly = false
 
-SWEP.PrintName = "Honeybadger"
+SWEP.PrintName = "Honey Badger"
 SWEP.Class = "Assault Rifle"
-SWEP.Description = [[Badger of Honey.]]
+SWEP.Description = [[A compact, suppressed personal defense weapon chambered in .300 AAC Blackout, designed for close-quarters combat and stealth operations.]]
 SWEP.Trivia = {
     Manufacturer = "AAC",
     Calibre = ".300 Blackout",
