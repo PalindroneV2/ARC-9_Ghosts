@@ -61,7 +61,7 @@ ATT.Attachments = {
         Category = {"cod_extrairons_rear"},
         ExcludeElements = {"handguard_famas"},
         Bone = "j_gun",
-        Pos = Vector(0, 0, -3.445),
+        Pos = Vector(0, 0, -3.46),
         Ang = Angle(0, 0, 0),
     },
 }
