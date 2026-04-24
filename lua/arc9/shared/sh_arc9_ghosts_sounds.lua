@@ -3,7 +3,7 @@
 
 sound.Add( {
     name = "ARC9_Ghosts.Badger_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -80,7 +80,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.AK12_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -139,7 +139,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.ARX160_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -216,7 +216,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.CZ805_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -275,7 +275,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.M27_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -352,7 +352,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.Ameli_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -438,7 +438,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.ChainSAW_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -526,7 +526,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.GM6_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -594,7 +594,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.R5RGP_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -662,7 +662,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.K7_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -730,7 +730,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.Bizon_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -798,7 +798,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.M9A1_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -848,7 +848,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.P226_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -898,7 +898,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.FP6_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -908,7 +908,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.Shotgun_Silenced",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -970,7 +970,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.MTS255_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -1047,7 +1047,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.MAUL_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
@@ -1163,7 +1163,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ARC9_Ghosts.Kastet_Fire",
-    channel = CHAN_STATIC,
+    channel = CHAN_AUTO,
     volume = 0.75,
     level = 100,
     sound = {
