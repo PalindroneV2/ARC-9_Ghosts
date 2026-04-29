@@ -894,6 +894,101 @@ sound.Add( {
     }
 } )
 
+-- RagingBull
+
+sound.Add( {
+    name = "ARC9_Ghosts.RagingBull_Fire",
+    channel = CHAN_AUTO,
+    volume = 0.75,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_RagingBull/fire.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ARC9_Ghosts.RagingBull_Mech",
+    channel = CHAN_USER_BASE,
+    volume = 1,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_RagingBull/mech.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ARC9_Ghosts.RagingBull_Cock",
+    channel = CHAN_USER_BASE,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_RagingBull/cock.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.RagingBull_Cock2",
+    channel = CHAN_USER_BASE,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_RagingBull/cock2.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.RagingBull_In",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_RagingBull/in.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.RagingBull_Out",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_RagingBull/out.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.RagingBull_Out2",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_RagingBull/out2.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.RagingBull_Open",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_RagingBull/open.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.RagingBull_Close",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_RagingBull/close.wav",
+    }
+} )
+sound.Add( {
+    name = "ARC9_Ghosts.RagingBull_Lift",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 100,
+    sound = {
+        "^weapons/ARC9/gst_RagingBull/lift.wav",
+    }
+} )
+
 -- FP6
 
 sound.Add( {
